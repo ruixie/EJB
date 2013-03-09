@@ -21,7 +21,7 @@ public class Stable implements Serializable{
 	private Set<Horse> horses;
 	
 	@Id
-	@Column(name="stableName")
+	@Column(name="stableNumber")
 	public long getStableNumber() {
 		return stableNumber;
 	}

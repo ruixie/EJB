@@ -46,7 +46,7 @@ public class Horse implements Serializable{
 	}
 	
 	@ManyToOne
-	@JoinColumn(name ="horseNumber", referencedColumnName ="horseNumber")
+	@JoinColumn(name ="stableNumber", referencedColumnName ="stableNumber")
 	public Stable getStable() {
 		return stable;
 	}
