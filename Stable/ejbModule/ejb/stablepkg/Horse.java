@@ -5,15 +5,20 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Horse")
 public class Horse implements Serializable{
 	
+	private static final long serialVersionUID = 7044414250696714325L;
+	
 	private long horseNumber;
 	private String name;
 	private String color;
+	private Stable stable;
 	
 	@Id
 	@Column(name="horseNumber")
@@ -38,6 +43,15 @@ public class Horse implements Serializable{
 	}
 	public void setColor(String color) {
 		this.color = color;
+	}
+	
+	@ManyToOne
+	@JoinColumn(name ="horseNumber", referencedColumnName ="horseNumber")
+	public Stable getStable() {
+		return stable;
+	}
+	public void setStable(Stable stable) {
+		this.stable = stable;
 	}
 	
 	
