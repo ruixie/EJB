@@ -3,6 +3,7 @@ package ejb.stablepkg;
 import java.io.Serializable;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,6 +20,8 @@ public class Stable implements Serializable{
 	private long stableNumber;
 	private String stableName;
 	private Set<Horse> horses;
+	
+	
 	
 	@Id
 	@Column(name="stableNumber")
@@ -37,7 +40,7 @@ public class Stable implements Serializable{
 		this.stableName = stableName;
 	}
 	
-	@OneToMany(mappedBy="stable", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="stable", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	public Set<Horse> getHorses() {
 		return horses;
 	}
