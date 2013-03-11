@@ -64,7 +64,7 @@ public class StableMainServlet extends HttpServlet {
 		}
 //		
 		Horse h2 = new Horse();
-		h2.setHorseNumber(5);
+		h2.setHorseNumber(10);
 		h2.setName("Bellagio");
 		h2.setColor("White");
 		h2.setStable(s);
@@ -76,7 +76,7 @@ public class StableMainServlet extends HttpServlet {
 		
 		Stable s2 = facade.findStableByNumber(1);
 		
-		out.println(s.getStableName());
+		out.println("gågn 2: " + s.getStableName());
 		Set<Horse> horselist2 = s2.getHorses();
 		
 		for(Horse h : horselist2){
