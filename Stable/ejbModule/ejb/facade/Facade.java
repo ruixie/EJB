@@ -32,7 +32,7 @@ public class Facade implements FacadeRemote, FacadeLocal {
 
 	
 	
-	// ****** Horse methods *****
+	// ****** Horsie methods *****
 	public Horse createHorse(Horse horse) {
 		return horseEALocal.createHorse(horse);
 	}
