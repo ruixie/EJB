@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.Set;
 
 import javax.ejb.EJB;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,12 +34,28 @@ public class StableMainServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
-		out.println("<html>");
+//	/**
+//	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+//	 */
+//	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//
+//		
+//		System.out.println("service");
+//		
+		
+		//		PrintWriter out = response.getWriter();
+//		out.println("<html>");
+//		
+//		
+//		Stable s = facade.findStableByNumber(2);
+//		Set<Horse> horses = s.getHorses();
+//		
+//		if(horses == null){
+//			out.println("Null");
+//		}
+//		if(horses.size() == 0){
+//			out.println("noll i längd");
+//		}
 		
 //		Horse h1 = new Horse();
 //		h1.setHorseNumber(1);
@@ -53,47 +70,51 @@ public class StableMainServlet extends HttpServlet {
 //		facade.createStable(s6);
 //		
 		
-		Stable s = facade.findStableByNumber(1);
-		
-		out.println(s.getStableName());
-		Set<Horse> horselist = s.getHorses();
-		
-		for(Horse h : horselist){
-		
-			out.println(h.getName());
-		}
+//		Stable s = facade.findStableByNumber(1);
 //		
-		Horse h2 = new Horse();
-		h2.setHorseNumber(10);
-		h2.setName("Bellagio");
-		h2.setColor("White");
-		h2.setStable(s);
-		
-		
-		horselist.add(h2);
-		
-		facade.updateStable(s);
-		
-		Stable s2 = facade.findStableByNumber(1);
-		
-		out.println("gågn 2: " + s.getStableName());
-		Set<Horse> horselist2 = s2.getHorses();
-		
-		for(Horse h : horselist2){
-		
-			out.println(h.getName());
-		}
+//		out.println(s.getStableName());
+//		Set<Horse> horselist = s.getHorses();
+//		
+//		for(Horse h : horselist){
+//		
+//			out.println(h.getName());
+//		}
+//		
+//		Horse h2 = new Horse();
+//		h2.setHorseNumber(10);
+//		h2.setName("Bellagio");
+//		h2.setColor("White");
+//		h2.setStable(s);
+//		
+//		
+//		horselist.add(h2);
+//		
+//		facade.updateStable(s);
+//		
+//		Stable s2 = facade.findStableByNumber(1);
+//		
+//		out.println("gågn 2: " + s.getStableName());
+//		Set<Horse> horselist2 = s2.getHorses();
+//		
+//		for(Horse h : horselist2){
+//		
+//			out.println(h.getName());
+//		}
 		
 //		if(horselist)
 //		
 		
-	}
+//	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		String url = "/WEB-INF/index.jsp";
+		
+		
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+		dispatcher.forward(request, response);
 	}
 
 	/**
