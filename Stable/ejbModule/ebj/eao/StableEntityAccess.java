@@ -1,9 +1,12 @@
 package ebj.eao;
 
+import java.util.List;
+
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import ejb.stablepkg.Stable;
 
@@ -43,6 +46,12 @@ public class StableEntityAccess implements StableEntityAccessLocal {
 		if (stable != null) {
 			entityManager.remove(stable);
 		}
+	}
+	
+	public List<Stable> findAllStables() {
+		TypedQuery<Stable> query = entityManager.createNamedQuery("Stable.findAll", Stable.class);
+		List<Stable> results = query.getResultList();
+		return results; 
 	}
 
 }

@@ -19,7 +19,7 @@ import ejb.stablepkg.Stable;
 /**
  * Servlet implementation class StableMainServlet
  */
-@WebServlet("/StableMainServlet")
+@WebServlet({"/StableMainServlet", "/Home"})
 public class StableMainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

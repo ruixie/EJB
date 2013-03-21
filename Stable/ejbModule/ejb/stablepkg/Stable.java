@@ -8,10 +8,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
+
+@NamedQuery(name="Stable.findAll", query="SELECT e FROM Stable e")
+
 @Table(name="Stable")
 public class Stable implements Serializable{
 	
@@ -47,5 +52,9 @@ public class Stable implements Serializable{
 	public void setHorses(Set<Horse> horses) {
 		this.horses = horses;
 	}
+	
+	
+	
+	
 	
 }

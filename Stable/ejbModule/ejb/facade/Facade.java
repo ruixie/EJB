@@ -1,5 +1,6 @@
 package ejb.facade;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.ejb.EJB;
@@ -55,6 +56,9 @@ public class Facade implements FacadeRemote, FacadeLocal {
 		return stableEALocal.updateStable(stable);
 	}
 	
+	public List<Stable> findAllStables() {
+		return stableEALocal.findAllStables();
+	}
 	
 
 }

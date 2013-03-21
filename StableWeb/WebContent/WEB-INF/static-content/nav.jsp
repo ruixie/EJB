@@ -9,11 +9,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">The Stables</a>
+          <a class="brand" href="/StableWeb/Home">The Stables</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
+              <li><a href="/StableWeb/Home">Home</a></li>
+              <li><a href="/StableWeb/Stable">All Stables</a></li>
               <li><a href="#contact">Contact</a></li>
               
             </ul>

@@ -1,5 +1,7 @@
 package ejb.facade;
 
+import java.util.List;
+
 import javax.ejb.Remote;
 
 import ejb.stablepkg.Horse;
@@ -12,6 +14,5 @@ public interface FacadeRemote {
 	public Stable findStableByNumber(long stableNumber);
 	public Stable createStable(Stable stable);
 	public Stable updateStable(Stable stable);
-	
-
+	public List<Stable> findAllStables();
 }
