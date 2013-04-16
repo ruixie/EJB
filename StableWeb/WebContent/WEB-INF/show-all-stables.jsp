@@ -22,7 +22,7 @@
     <br><br>
     <h1>All the stables</h1>
     
-    <% List<Stable> stableList = (List<Stable>)request.getAttribute("allStables"); %>
+    <% List<Stable> stableList = (List<Stable>)request.getAttribute("allStables");    %>
 
      <table class="table table-striped">
               <thead>

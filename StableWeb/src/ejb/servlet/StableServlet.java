@@ -57,7 +57,8 @@ public class StableServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println(request.getQueryString());
+		System.out.println(request.getRequestURL());
 		Stable stable = new Stable();
 		stable.setStableName(request.getParameter("stableName"));
 		
